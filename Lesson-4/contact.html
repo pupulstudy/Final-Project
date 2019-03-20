@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Mibon Bali
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="animate.css"/>
+    <link rel="stylesheet" type="text/css" href="styling.css"/>
+
+
+    <script type="text/javascript">
+        function check()
+        { /*Validation*/
+            var valid=true;
+
+            var obj=document.getElementById("frm");
+
+            var firstname=obj.idfirstname.value;
+            var lastname=obj.idlastname.value;
+            var emailname=obj.idemailname.value;
+            var polaemail =  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+            if(firstname.trim() === "")
+            {
+                valid=false;
+                alert("Fill out your First Name");
+                obj.idfirstname.focus();
+            }
+            else if(lastname.trim() === "")
+            {
+                valid=false;
+                alert("Fill out your Last Name");
+                obj.idlastname.focus();
+            }
+            else if(emailname.trim() === "") 
+            {
+                valid=false;
+                alert("Don't leave your email addresss empty");
+                obj.idemailname.focus();
+            }
+            else if(!polaemail.test(emailname))
+            {
+                valid=false;
+                alert("Incorrect email addresss format, e.g. minibonsaibali@gmail.com");
+                obj.idemailname.focus();
+            }
+            return valid;
+        }
+    </script>
+
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo02">
+        <ul class="navbar-nav nav mr-2 mt-2 mt-lg-0">
+            <li class="nav-item mx-1 active">
+                <a class="nav-link align-content-center" href="home.html">Home</a>
+            </li>
+            <li class="nav-item mx-1">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item mx-1">
+                <a class="nav-link" href="#">Contact
+                    <span class="sr-only">(current)</span>
+                    <div class="border-bottom border-dark pt-1"></div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</nav>
+
+
+
+<!-- contact us -->
+<div class="container contact-container">
+    <div class="row margin-top justify-content-center">
+        <div class="col-6 col-md-5 col-lg-6 contact-us">
+            <div class="border-bottom-contact animated bounceInDown slow">
+                <h6 class="contact-name m-0">Made William</h6>
+                <div class="pb-3"><p class="m-0">pupulgroup</p></div>
+            </div>
+            <div class="contact-info pb-3 animated bounceInDown slow">
+                <p class="m-0">(+62)81-9990-38345</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- map -->
+<div class="container pt-5">
+    <div class="row justify-content-center">
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.4781482778576!2d114.89068271463734!3d-8.452794387768979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd3d39d047b0893%3A0x9c1e930e3dbdee82!2sMini+Bonsai+Bali!5e0!3m2!1sen!2sid!4v1553097670904" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+</div>
+
+
+<!-- email box -->
+<div class="container-email-box">
+    <div class="transparent-box container-fluid">
+        <div class="row justify-content-center pt-10">
+            <h3>
+                don't miss out our latest updates!
+            </h3>
+        </div>
+        <div class="row justify-content-center p-0">
+            <p class="px-4 text-center">
+                Enter your name and email below to get our newsletter weekly
+            </p>
+        </div>
+
+        <form action="https://formspree.io/pupul.study@gmail.com" method="post" onSubmit="return check();" id="frm">
+            <div class="form-row align-items-center px-5 justify-content-center pt-3">
+                <div class="col-sm-12 col-md-5 pt-2">
+                    <input type="text" class="form-control" placeholder="First Name" id="idfirstname" name="firstname">
+                </div>
+                <div class="col-sm-12 col-md-5 pt-2">
+                    <input type="text" class="form-control" placeholder="Last Name" id="idlastname" name="lastname">
+                </div>
+            </div>
+
+
+            <div class="form-row align-items-center px-5 justify-content-center pt-3">
+                <div class="col-sm-8">
+                    <label class="sr-only" for="idemailname">Name</label>
+                    <input type="text" class="w-100 form-control mb-2 float-right" id="idemailname" placeholder="Email Address" name="email">
+                </div>
+
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-dark mb-2">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- footer -->
+<div class="container-fluid footer">
+ <div class="container pt-4 pb-2">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-4">
+            <div class="row justify-content-center pt-1 text-grey">
+                <h5>Mibon Bali</h5>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
